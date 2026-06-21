@@ -13,15 +13,6 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Load OF configs.
 $(call inherit-product, device/motorola/taipei/fox_taipei.mk)
 
-# Product Specifics
-PRODUCT_NAME := twrp_taipei
-PRODUCT_DEVICE := taipei
-PRODUCT_BRAND := motorola
-PRODUCT_MODEL := taipei
-PRODUCT_MANUFACTURER := motorola
-
-PRODUCT_GMS_CLIENTID_BASE := android-taipei
-
 # Crypto
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
