@@ -90,9 +90,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# SukiSU Enable
 	export FOX_ENABLE_SUKISU_SUPPORT=1
 	
-	# Magisk
-	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/fox_12.1/device/motorola/taipei/Magisk/Magisk-v26.4.zip
-	
 	# Settings location
     export FOX_SETTINGS_ROOT_DIRECTORY=/persist/OFRP
     export FOX_ALLOW_EARLY_SETTINGS_LOAD=1
