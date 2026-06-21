@@ -15,12 +15,3 @@ TARGET_OTA_ASSERT_DEVICE := taipei
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_taipei
 TARGET_RECOVERY_DEVICE_MODULES := libinit_taipei
-
-# TWRP Configs
-TW_DEVICE_VERSION := taipei_V1UTC35H.45-32-8
-
-# Touchfix
-TW_LOAD_VENDOR_MODULES := "focaltech_0flash_mmi_v2.ko"
-
-# Backup folder name fix
-TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
