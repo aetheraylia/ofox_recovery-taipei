@@ -1,0 +1,14 @@
+cc_library_static {
+    name: "libinit_taipei",
+    header_libs: [
+        "libbase_headers",
+    ],
+    cflags: [
+        "-Wall",
+    ],
+    static_libs: [
+        "libbase",
+    ],
+    srcs: ["init_taipei.cpp"],
+    recovery_available: true,
+}

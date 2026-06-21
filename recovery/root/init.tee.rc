@@ -1,0 +1,57 @@
+on init
+	# Symlink partitions for decryption
+	symlink /persist /mnt/vendor/persist
+    symlink /vendor/app/mcRegistry /mnt/vendor/tzapp
+
+on post-fs
+    # Create mcRegistry to store failure record
+    mkdir /mnt/vendor/persist/mcRegistry 0771 system system
+	
+    write /proc/bootprof "MOBICORE: Starting mcDriverDaemon"
+    start mobicore
+	
+	# Add start two services for decryption
+    start vendor.gatekeeper-1-0
+    start vendor.keymint-trustonic
+	
+on property:sys.boot_completed=*
+    # Override the mobicore token path and rebel it with proper contexts
+    mkdir /mnt/vendor/persist/mobicore 0770 system system
+    restorecon /mnt/vendor/persist/mobicore
+
+on post-fs-data
+    # Create /data/vendor/key_provisioning dir and get proper encryption policy installed
+    # Key Installation
+    mkdir /data/vendor/key_provisioning 0771 system system
+
+# For META/FACTORY mode
+on property:ro.crypto.state=unencrypted
+    write /proc/bootprof "MOBICORE: create /data/vendor/mcRegistry ++ (unencrypted)"
+    mkdir /data/vendor/mcRegistry 0775 system system
+    write /proc/bootprof "MOBICORE: create /data/vendor/mcRegistry -- (unencrypted)"
+
+# Normal mode, FBE
+on property:ro.crypto.type=file && property:ro.crypto.state=encrypted
+    write /proc/bootprof "MOBICORE: create /data/vendor/mcRegistry ++ (FBE encrypted)"
+    mkdir /data/vendor/mcRegistry 0775 system system
+    write /proc/bootprof "MOBICORE: create /data/vendor/mcRegistry -- (FBE encrypted)"
+
+# Normal mode, FDE
+on property:vold.decrypt=trigger_restart_framework
+    write /proc/bootprof "MOBICORE: create /data/vendor/mcRegistry ++ (FDE encrypted)"
+    mkdir /data/vendor/mcRegistry 0775 system system
+    write /proc/bootprof "MOBICORE: create /data/vendor/mcRegistry -- (FDE encrypted)"
+
+service vendor.gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+    interface android.hardware.gatekeeper@1.0::IGatekeeper default
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service vendor.keymint-trustonic /vendor/bin/hw/android.hardware.security.keymint-service.trustonic
+    class early_hal
+    interface android.hardware.keymaster@4.0::IKeymasterDevice default
+    interface android.hardware.keymaster@4.1::IKeymasterDevice default
+    user nobody
+    seclabel u:r:recovery:s0
