@@ -10,6 +10,9 @@ $(call inherit-product, device/motorola/taipei/device.mk)
 # Inherit some common TWRP stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
+# Load OF configs.
+$(call inherit-product, device/motorola/taipei/fox_taipei.mk)
+
 # Product Specifics
 PRODUCT_NAME := twrp_taipei
 PRODUCT_DEVICE := taipei
