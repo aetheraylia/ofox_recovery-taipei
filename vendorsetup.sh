@@ -43,9 +43,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_BASH_SHELL=1
 	export FOX_USE_NANO_EDITOR=1
 
-	# variant
-	#export FOX_VARIANT="R11.2-A12_ramabondanp"
-
 	# SukiSU Enable
 	export FOX_ENABLE_SUKISU_SUPPORT=1
 	
