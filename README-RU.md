@@ -1,5 +1,5 @@
 Русский | [English](README.md)
-# OrangeFox Recovery для Motorola Moto G55 (taipei/XT2435-3)
+# Дерево рекавери для Motorola Moto G55 (taipei/XT2435-3)
 
 ## Как собрать ?
 ### 1. Скачайте дерево в исходники
