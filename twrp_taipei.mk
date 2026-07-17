@@ -56,3 +56,6 @@ TW_LOAD_VENDOR_MODULES := "focaltech_0flash_mmi_v2.ko"
 
 # Backup folder name fix
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
+
+# Vibro
+TW_SUPPORT_INPUT_AIDL_HAPTICS := true
