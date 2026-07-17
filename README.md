@@ -20,8 +20,8 @@ fastboot flash vendor_boot out/target/product/taipei/vendor_boot.img
 ```
 
 ## Tree status
-### 1. Vibro not working
-### 2. OTG not working
-### 3. Switch slot not working
+### 1. OTG not working
+### 2. Switch slot not working
+### 3. Flashlight not working
 
 ##### P.S. Oh, thank you, sir > https://github.com/MisterZtr
