@@ -1,4 +1,3 @@
-English | [Русский](README-RU.md)
 # Recovery tree for Motorola Moto G55 (taipei/XT2435-3)
 
 ## How to build ?
