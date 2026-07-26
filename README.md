@@ -3,7 +3,7 @@
 ## How to build ?
 ### 1. Download files
 ```bash
-git clone https://github.com/aetheraylia/recovery_device_motorola_taipei.git device/motorola/taipei
+git clone -b orangefox-12.1 https://github.com/aetheraylia/recovery_device_motorola_taipei.git device/motorola/taipei
 ```
 ### 2. Initiliaze device
 ```bash
