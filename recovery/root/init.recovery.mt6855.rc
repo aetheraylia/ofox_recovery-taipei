@@ -2,6 +2,7 @@ import /init.tee.rc
 import /init.trustonic.rc
 import /vibrator-mtk-default.rc
 import /mtk-plpath-utils.rc
+import /android.hardware.boot@1.2-service.rc
 
 on init
     setprop sys.usb.configfs 1
@@ -9,12 +10,10 @@ on init
     setprop sys.usb.ffs.aio_compat 0
     export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
     setprop crypto.ready 1
-    start boot-hal-1-2
 
 on fs
     wait /dev/block/platform/soc/112b0000.ufshci
     symlink /dev/block/platform/soc/112b0000.ufshci /dev/block/bootdevice
-    install_keyring
 
 on boot
     setprop sys.usb.config adb
