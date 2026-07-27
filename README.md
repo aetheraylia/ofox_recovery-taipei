@@ -3,7 +3,7 @@
 ## How to build ?
 ### 1. Download files
 ```bash
-git clone -b orangefox-12.1 https://github.com/aetheraylia/recovery_device_motorola_taipei.git device/motorola/taipei
+git clone -b orangefox-14.1 https://github.com/aetheraylia/recovery_device_motorola_taipei.git device/motorola/taipei
 ```
 ### 2. Initiliaze device
 ```bash
@@ -19,7 +19,7 @@ export CCACHE_COMPRESS=1
 ```
 ### 3. Build
 ```bash
-breakfast twrp_taipei-eng
+breakfast twrp_taipei-ap2a-eng
 ```
 #### Cleanup errors
 ```

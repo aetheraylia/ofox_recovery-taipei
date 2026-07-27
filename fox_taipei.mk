@@ -18,8 +18,6 @@
 # 	Please maintain this if you use this script or any part of it
 #
 
-OF_DEFAULT_KEYMASTER_VERSION := 4.1
-
 # screen settings
 OF_SCREEN_H := 2400
 OF_STATUS_H := 95
@@ -29,7 +27,6 @@ OF_ALLOW_DISABLE_NAVBAR := 0
 OF_CLOCK_POS := 1
 
 # other stuff
-#OF_QUICK_BACKUP_LIST := "/boot:/data"
 OF_ENABLE_LPTOOLS := 1
 OF_NO_TREBLE_COMPATIBILITY_CHECK := 1
 

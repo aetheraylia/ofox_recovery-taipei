@@ -8,9 +8,6 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
-
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
@@ -58,14 +55,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_SHIPPING_API_LEVEL := 31
 PRODUCT_TARGET_VNDK_VERSION := 31
 
-# Boot control HAL
-PRODUCT_PACKAGES += \
-android.hardware.boot@1.2-mtkimpl \
-android.hardware.boot@1.2-mtkimpl.recovery
-
-PRODUCT_PACKAGES_DEBUG += \
-bootctl
-
 # Fastbootd
 PRODUCT_PACKAGES += \
 android.hardware.fastboot@1.0-impl-mock \
@@ -75,10 +64,6 @@ fastbootd
 PRODUCT_PACKAGES += \
 android.hardware.health@2.1-impl \
 android.hardware.health@2.1-service
-
-# Keystore Hal
-PRODUCT_PACKAGES += \
-    android.system.keystore2
 
 # MTK plpath utils
 PRODUCT_PACKAGES += \

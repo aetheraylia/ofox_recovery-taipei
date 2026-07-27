@@ -17,7 +17,6 @@ $(call inherit-product, device/motorola/taipei/fox_taipei.mk)
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 TW_USE_FSCRYPT_POLICY := 2
-TW_FORCE_KEYMASTER_VER := true
 
 # Tools
 TW_INCLUDE_FB2PNG := true
